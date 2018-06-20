@@ -59,7 +59,8 @@ let messages = {
 	correct: "Yes, that's right!",
 	incorrect: "No, that's not it.",
 	endTime: "Out of time!",
-	finished: "Alright! Let's see how well you did."
+	finished: "Alright! Let's see how well you did.",
+	skipped: "Ouch!! You've missed this one."
 	
 }
 // Hides the start button and starts a new game
@@ -156,7 +157,7 @@ function answerPage() {
 	} else if ((userSelect === -1) && (answered === true)) {
 		unanswered++;
 		answered = false;
-		$('#message').html(messages.incorrect);
+		$('#message').html(messages.skipped);
 		$('#correctedAnswer').html('The correct answer was: ' + rightAnswerText);
 		
 	} else if ((userSelect != rightAnswerIndex) && (answered === true)) {
